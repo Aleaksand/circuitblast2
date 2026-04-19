@@ -31,7 +31,7 @@ jobs:
     
     - name: Create Cordova Project
       run: |
-        cordova create build-temp com.yourname.circuitblast CircuitBlast
+        cordova create build-temp com.tsevan.loopix Loopix
         cp -r www build-temp/
         cp config.xml build-temp/
     
@@ -73,17 +73,16 @@ jobs:
         APK_DIR=$(dirname "$APK_PATH")
         
         # Генерируем keystore
-        keytool -genkey -v -keystore "$APK_DIR/my.keystore" -keyalg RSA -keysize 2048 -validity 10000 -alias app -storepass password -keypass password -dname "CN=Android,O=Android,C=US"
+        keytool -genkey -v -keystore "$APK_DIR/loopix.keystore" -keyalg RSA -keysize 2048 -validity 10000 -alias loopix -storepass password -keypass password -dname "CN=tsevan,O=tsevan,C=BY"
         
         # Подписываем APK
         APK_SIGNER=$(find $ANDROID_HOME/build-tools -name apksigner | sort -r | head -n 1)
-        $APK_SIGNER sign --ks "$APK_DIR/my.keystore" --ks-key-alias app --ks-pass pass:password --key-pass pass:password --out "${{ github.workspace }}/CircuitBlast.apk" "$APK_PATH"
+        $APK_SIGNER sign --ks "$APK_DIR/loopix.keystore" --ks-key-alias loopix --ks-pass pass:password --key-pass pass:password --out "${{ github.workspace }}/Loopix.apk" "$APK_PATH"
         
-        echo "FINAL_APK_PATH=${{ github.workspace }}/CircuitBlast.apk" >> $GITHUB_ENV
+        echo "FINAL_APK_PATH=${{ github.workspace }}/Loopix.apk" >> $GITHUB_ENV
     
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
-        name: CircuitBlast-APK
+        name: Loopix-APK
         path: ${{ env.FINAL_APK_PATH }}
-
