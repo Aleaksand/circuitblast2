@@ -14,8 +14,8 @@
 
 ## 👤 Разработчик
 **tsevan**
-- GitHub: [github.com/tsevan/loopix](https://github.com/
-Aleaksand/loopix)
+- GitHub: [github.com/
+Aleaksand/loopix]
 
 ## 📦 Сборка
 ```bash
