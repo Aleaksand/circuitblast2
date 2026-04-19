@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.yourname.circuitblast" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>CircuitBlast</name>
+<widget id="com.tsevan.loopix" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Loopix</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        Увлекательная головоломка с построением замкнутых цепей
     </description>
-    <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
-        Apache Cordova Team
+    <author email="tsevan.dev@gmail.com" href="https://github.com/tsevan/loopix">
+        tsevan
     </author>
     <content src="index.html" />
     <allow-intent href="http://*/*" />
